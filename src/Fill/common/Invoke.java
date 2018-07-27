@@ -55,7 +55,7 @@ public class Invoke {
 
     public static <E> void putValue(E e, String name, String value, Class<?> paramtertype, FillConstent fillConstent) throws Exception {
 
-        if (NullEmptyTool.isNNoEE(paramtertype))
+        if (NullEmptyTool.isNoEE(paramtertype))
             paramtertype = e.getClass().getDeclaredField(name).getType();
         StringBuffer setName = new StringBuffer().append("set").append(name.substring(0, 1).toUpperCase()).append(name.substring(1));
         Method method = e.getClass().getMethod(setName.toString(), paramtertype);
